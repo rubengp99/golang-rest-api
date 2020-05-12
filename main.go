@@ -18,7 +18,12 @@ func main(){
 //Router exports the router of the API
 func router() *mux.Router{
 	Router := mux.NewRouter().StrictSlash(true)
-	Router.Handle("/api/conceptos", conceptos.Router())
+	for _, route := range conceptos.Routes {
+        Router.
+            Methods(route.Method).
+            Path(route.Pattern).
+            Handler(route.HandlerFunc)
+    }
 	
 	return Router
 }

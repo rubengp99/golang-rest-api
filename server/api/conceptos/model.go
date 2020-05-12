@@ -61,7 +61,7 @@ type concepto struct{
     Existencias []Deposito  `json:"existencias"`
 }
 
-// Deposito contains the existence of the concept
+// Deposito which contains the existence of the concept
 type Deposito struct{
 	AdmDepositosID int `json:"adm_depositos_id"`
 	Nombre string   `json:"nombre"`

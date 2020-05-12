@@ -1,13 +1,14 @@
 package conceptos
 
 import (
-	"github.com/gorilla/mux"
+	"github.com/rubengp99/golang-rest-api/commons"
 )
 
-// Router returns a Router Object with EndPoint's routes
-func Router() *mux.Router{
-	conceptos := mux.NewRouter().StrictSlash(true)
-	
-	conceptos.HandleFunc("/",GetAll).Methods("GET")
-	return conceptos
+// Routes of the EndPoint conceptos
+var Routes = commons.Routes{
+    commons.Route{
+        "GET",
+		"/api/conceptos/",
+		GetAll,
+    },
 }
