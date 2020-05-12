@@ -1,9 +1,9 @@
-package global
+package commons
 
 // APIResponse is the result of a request
 type APIResponse struct{
-    message string
-    code int
+    Message string
+    Code int
 }
 
 // Ok returns HTTP 200 OK response

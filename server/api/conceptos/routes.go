@@ -4,9 +4,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func conceptosRouter() mux.Router{
+// Router returns a Router Object with EndPoint's routes
+func Router() *mux.Router{
 	conceptos := mux.NewRouter().StrictSlash(true)
 	
-	conceptos.HandleFunc("/",GetAll)
-	return *conceptos
+	conceptos.HandleFunc("/",GetAll).Methods("GET")
+	return conceptos
 }

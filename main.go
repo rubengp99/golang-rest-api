@@ -1,12 +1,12 @@
 package main
 
 import (
-	//"fmt"
-	"github.com/gorilla/mux"
-	"./api/conceptos"
+	 _ "github.com/joho/godotenv/autoload"	
+	"net/http"
+	"os"
 )
 
 func main(){
-	conceptos := mux.NewRouter().StrictSlash(true)
-	conceptos.Handle("",nil)
+	router := router()
+	http.ListenAndServe( os.Getenv("API_PORT") , router);
 }
