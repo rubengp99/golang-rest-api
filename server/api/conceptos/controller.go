@@ -44,7 +44,4 @@ func GetAll( res http.ResponseWriter, req *http.Request){
 		json.NewEncoder(res).Encode(commons.NewResponse{count, data, response})
 	}
 	
-	
-	
-	
 }
