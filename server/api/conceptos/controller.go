@@ -24,12 +24,14 @@ func GetAll( res http.ResponseWriter, req *http.Request){
 		if err != nil {
 			fmt.Println(`Could not find anything at collection `+model+`, error:`,err)
 			json.NewEncoder(res).Encode(commons.NewResponse{0, nil, commons.InternalServerError()})
+			return
 		}
 
 		var data []bson.M
 		if err = cursor.All(ctx, &data); err != nil {
 			fmt.Println(`Could not access to data at controller `+model+`, error:`,err)
 			json.NewEncoder(res).Encode(commons.NewResponse{0, nil, commons.InternalServerError()})
+			return
 		}
 
 		count := len(data)
