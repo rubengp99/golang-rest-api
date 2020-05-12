@@ -1,68 +1,69 @@
 package conceptos
 
 type concepto struct{
-	id int
-    empresaID int
-    codigo string
-    referencia string
-    nombre string
-    descripcion string
-    talla string
-    color string
-    descuento float32
-    serialEstatico float32
-    serialDinamico float32
-    existenciaMinima float32
-    existenciaMaxima float32
-    tiposConceptosID int
-    ubicacionID int
-    costo float32
-    ultimoCosto float32
-    costoMayor float32
-    costoPromedio float32
-    fechaAt string
-    fechaIn string
-    fechaUc string
-    gruposID int
-    subgruposID int
-    presentacion int
-    unidadesID int
-    fechaHora string
-    marcasID int
-    estado bool
-    pvp float32
-    precioA float32
-    precionB float32
-    precioDolar float32
-    utilidad float32
-    utiliadA float32
-    utilidadB float32
-    utilidadC float32 
-    utilidadDolar float32
-    costoDolar float32
-    precioVariante float32
-    retiene bool
-    farmPrincipioActivoID int
-    imagen string
-    costoAdicional float32
-    costoAdicional2 float32
-    cantEnsamblado int
-    licor bool
-    porcentaje float32
-    visiblePv bool
-    visibleWeb bool
-    restAreasID int
-    setcortesia bool
-    exento bool
-    merma bool
-    exitenciaC int
-    obviarAjuste bool
-    iva bool
-    existencias []deposito
+	ID int  `json:"id"`
+    EmpresaID int   `json:"adm_empresas_id"`
+    Codigo string   `json:"codigo"`
+    Referencia string   `json:"referencia"`
+    Nombre string   `json:"nombre"`
+    Descripcion string  `json:"descripcion"`
+    Talla string    `json:"talla"`
+    Color string    `json:"color"`
+    Descuento float32   `json:"descuento"`
+    SerialEstatico float32  `json:"serial_estatico"`
+    SerialDinamico float32  `json:"serial_dinamico"`
+    ExistenciaMinima float32    `json:"existencia_minima"`
+    ExistenciaMaxima float32    `json:"existencia_maxima"`
+    TiposConceptosID int    `json:"tipos_conceptos_id"`
+    UbicacionID int `json:"ubicacion_id"`
+    Costo float32   `json:"costo"`
+    UltimoCosto float32 `json:"ultimo_costo"`
+    CostoMayor float32  `json:"costo_mayor"`
+    CostoPromedio float32   `json:"costo_promedio"`
+    FechaAt string  `json:"fecha_at"`
+    FechaIn string  `json:"fecha_in"`
+    FechaUc string  `json:"fecha_uc"`
+    GruposID int    `json:"adm_grupos_id"`
+    SubgruposID int `json:"adm_subgrupos_id"`
+    Presentacion int    `json:"presentacion"`
+    UnidadesID int  `json:"unidades_id"`
+    FechaHora string `json:"fecha_hora"`
+    MarcasID int    `json:"marcas_id"`
+    Estado bool `json:"estado"`
+    Pvp float32 `json:"pvp"`
+    PrecioA float32 `json:"precio_a"`
+    PrecioB float32    `json:"precio_b"`
+    PrecioDolar float32 `json:"precio_dolar"`
+    Utilidad float32    `json:"utilidad"`
+    UtiliadA float32    `json:"utilidad_a"`
+    UtilidadB float32   `json:"utilidad_b"`
+    UtilidadC float32   `json:"utilidad_c"`
+    UtilidadDolar float32   `json:"utilidad_dolar"`
+    CostoDolar float32  `json:"costo_dolar"`
+    PrecioVariante float32  `json:"precio_variante"`
+    Retiene bool    `json:"retiene"`
+    FarmPrincipioActivoID int   `json:"farm_principio_activo_id"`
+    Imagen string   `json:"imagen"`
+    CostoAdicional float32  `json:"costo_adicional"`
+    CostoAdicional2 float32 `json:"costo_adicional2"`
+    CantEnsamblado int `json:"cant_esamblado"`
+    Licor bool  `json:"licor"`
+    Porcentaje float32  `json:"porcentaje"`
+    VisiblePv bool  `json:"visible_pv"`
+    VisibleWeb bool `json:"visible_web"`
+    RestAreasID int `json:"res_areas_id"`
+    Setcortesia bool    `json:"set_cortesia"`
+    Exento bool `json:"exento"`
+    Merma bool  `json:"merma"`
+    ExitenciaC int  `json:"existencia_c"`
+    ObviarAjuste bool   `json:"obviar_ajuste"`
+    Iva bool    `json:"iva"`
+    Existencias []Deposito  `json:"existencias"`
 }
 
-type deposito struct{
-	admDepositosID int
-	nombre string
-	existencia float32
+// Deposito contains the existence of the concept
+type Deposito struct{
+	AdmDepositosID int `json:"adm_depositos_id"`
+	Nombre string   `json:"nombre"`
+	Existencia float32  `json:"existencia"`
 }

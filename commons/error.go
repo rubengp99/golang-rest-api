@@ -2,8 +2,8 @@ package commons
 
 // APIResponse is the result of a request
 type APIResponse struct{
-    Message string
-    Code int
+    Message string `json:"message"`
+    Code int `json:"code"`
 }
 
 // Ok returns HTTP 200 OK response
