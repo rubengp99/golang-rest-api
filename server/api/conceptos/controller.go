@@ -31,7 +31,17 @@ func GetAll( res http.ResponseWriter, req *http.Request){
 			fmt.Println(`Could not access to data at controller `+model+`, error:`,err)
 			json.NewEncoder(res).Encode(commons.NewResponse{0, nil, commons.InternalServerError()})
 		}
-		json.NewEncoder(res).Encode(commons.NewResponse{len(data), data, commons.Ok()})
+
+		count := len(data)
+		var response commons.APIResponse
+
+		if count == 0 {
+			response = commons.Empty()
+		}else{
+			response = commons.Ok()
+		}
+
+		json.NewEncoder(res).Encode(commons.NewResponse{count, data, response})
 	}
 	
 	
