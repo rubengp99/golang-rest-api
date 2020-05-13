@@ -16,7 +16,7 @@ import (
 func Connection() (*mongo.Database, commons.APIResponse){
 	ctx := context.Background()
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(
-		"mongodb+srv://"+os.Getenv("MONGO_USER")+":"+os.Getenv("MONGO_PASSWORD")+"@"+os.Getenv("MONGO_CLUSTER")+"-8p1no.mongodb.net/test?retryWrites=true&w=majority",
+		"mongodb+srv://"+os.Getenv("MONGO_USER")+":"+os.Getenv("MONGO_PASSWORD")+"@"+os.Getenv("MONGO_CLUSTER")+"-8p1no.gcp.mongodb.net/test?retryWrites=true&w=majority",
 	))
 
     if err != nil {
